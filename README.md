@@ -49,8 +49,6 @@ Aplikasi mobile **Ruang Rasa** berbasis **React Native** dan **Expo**, sama pers
 
 Secara default, URL backend otomatis disesuaikan di .env
 
-> 💡 **Tip:** Anda juga dapat mengubah atau memeriksa IP backend langsung dari dalam aplikasi melalui tombol ikon **⚙️** di pojok atas layar!
-
 ---
 
 ## 🚀 Cara Menjalankan Aplikasi
