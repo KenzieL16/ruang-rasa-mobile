@@ -120,16 +120,6 @@ export default function LoginScreen({ onNavigate, onOpenSettings }) {
               Belum punya akun? Daftar sekarang
             </Text>
           </TouchableOpacity>
-
-          <TouchableOpacity
-            style={styles.adminLink}
-            onPress={() => onNavigate('AdminLogin')}
-            activeOpacity={0.7}
-          >
-            <Text style={styles.adminLinkText}>
-              Masuk sebagai Admin Panel →
-            </Text>
-          </TouchableOpacity>
         </View>
       </ScrollView>
     </KeyboardAvoidingView>
