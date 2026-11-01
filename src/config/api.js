@@ -19,15 +19,10 @@ let currentBaseUrl = DEFAULT_API_URL;
 
 export async function initApiConfig() {
   try {
-    const saved = await AsyncStorage.getItem('@ruang_rasa_api_url');
-    if (saved) {
-      currentBaseUrl = saved;
-    } else {
-      currentBaseUrl = DEFAULT_API_URL;
-    }
+    await AsyncStorage.removeItem('@ruang_rasa_api_url');
   } catch (_e) {
-    currentBaseUrl = DEFAULT_API_URL;
   }
+  currentBaseUrl = DEFAULT_API_URL;
   return currentBaseUrl;
 }
 
@@ -36,15 +31,7 @@ export function getApiBaseUrl() {
 }
 
 export async function setApiBaseUrl(url) {
-  let cleanUrl = url.trim();
-  if (cleanUrl.endsWith('/')) {
-    cleanUrl = cleanUrl.slice(0, -1);
-  }
-  if (!cleanUrl.endsWith('/api')) {
-    cleanUrl = `${cleanUrl}/api`;
-  }
-  currentBaseUrl = cleanUrl;
-  await AsyncStorage.setItem('@ruang_rasa_api_url', cleanUrl);
+  currentBaseUrl = normalizeUrl(url);
   return currentBaseUrl;
 }
 
